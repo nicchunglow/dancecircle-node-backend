@@ -2,7 +2,7 @@
   "name": "dancecircle-node-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
     "start-dev": "nodemon src/index.ts",
@@ -13,17 +13,17 @@
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.17",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "eslint": "^8.44.0",
+    "eslint": "^8.46.0",
     "express": "^4.18.2",
     "mongodb-memory-server": "^8.13.0",
-    "mongoose": "^7.3.1",
-    "nodemon": "^2.0.22",
-    "prettier": "^2.8.8",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.1",
+    "sequelize": "^6.32.1",
     "supertest": "^6.3.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
-    "@types/jest": "^29.5.2",
+    "@types/jest": "^29.5.3",
     "@types/supertest": "^2.0.12",
     "jest": "^29.5.0",
     "ts-jest": "^29.1.1"

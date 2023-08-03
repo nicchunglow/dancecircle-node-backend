@@ -1,17 +1,16 @@
 import "dotenv";
-import mongoose from "mongoose";
+import { Sequelize } from "sequelize";
 
 const dbName = "CanILoginDB";
-const dbUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/" + dbName;
 
-const connection = async () => {
-  mongoose.connect(dbUrl);
-};
+const sequelize = new Sequelize(
+  `${process.env.DB_SCHEMA_NAME}`,
+  `${process.env.DB_USERNAME}`,
+  process.env.DB_PASSWORD,
+  {
+    host: "localhost",
+    dialect: "postgres",
+  }
+);
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error"));
-db.once("open", () => {
-  console.log(`You are now connect to ${dbName} server at ${dbUrl}`);
-});
-
-export default connection;
+export default { Sequelize, sequelize };
