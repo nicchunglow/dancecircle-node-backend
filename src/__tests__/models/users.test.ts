@@ -1,6 +1,6 @@
-import User from "../../src/models/users.model";
+import User from "../../models/users.model";
 
-jest.mock("../../src/models/users.model", () => ({
+jest.mock("../../models/users.model", () => ({
   create: jest.fn(),
 }));
 
