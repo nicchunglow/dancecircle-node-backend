@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
-import * as UserController from "@/src/controllers/users.controller";
+import * as UserController from "../controllers/users.controller";
 const router = express.Router();
 
 const getUsers = async (_req: Request, res: Response, next: NextFunction) => {
