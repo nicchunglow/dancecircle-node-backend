@@ -1,20 +1,23 @@
-// import { DataTypes } from "sequelize";
-// import sequelize from "../utils/db";
+import { DataTypes } from "sequelize";
+import sequelize from "../utils/db";
 
-// const User = sequelize.define("User", {
-//   firstName: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//   },
-//   lastName: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//   },
-//   email: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//     unique: true,
-//   },
-// });
+const User = sequelize.define("User", {
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      Null: { msg: "firstName is required" },
+    },
+  },
+  lastName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+});
 
-// export default User;
+export default User;
