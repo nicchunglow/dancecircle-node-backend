@@ -1,5 +1,5 @@
-import User from "../../models/users.model";
-import { getUsers } from "../../controllers/users.controller";
+import User from "@/src/models/users.model";
+import { getUsers } from "@/src/controllers/users.controller";
 
 // Mock User dependency
 jest.mock("../../models/users.model.ts");

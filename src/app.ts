@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors, { CorsOptions } from "cors";
-
+import UserRouter from "@/src/routes/users.route";
 const app = express();
 const appIndex = (_req: Request, res: Response) => {
   res.send({
@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(cors(corsOptions));
 
+app.use("/users", UserRouter);
 app.get("/", appIndex);
 
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
