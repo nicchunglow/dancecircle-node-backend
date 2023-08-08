@@ -5,9 +5,6 @@ const User = sequelize.define("User", {
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: {
-      Null: { msg: "firstName is required" },
-    },
   },
   lastName: {
     type: DataTypes.STRING,
@@ -19,5 +16,7 @@ const User = sequelize.define("User", {
     unique: true,
   },
 });
+
+sequelize.sync();
 
 export default User;
