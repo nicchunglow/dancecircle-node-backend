@@ -1,7 +1,6 @@
 import User from "../../models/users.model";
 import { getUsers } from "../../controllers/users.controller";
 
-// Mock User dependency
 jest.mock("../../models/users.model.ts");
 
 describe("Users Controller", () => {
