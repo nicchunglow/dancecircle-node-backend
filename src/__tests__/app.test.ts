@@ -15,7 +15,6 @@ describe("/", () => {
       jest.spyOn(UserController, "getUsers").mockRejectedValue({ message: errorMessage, statusCode: 400 });
 
       const response = await request(app).get("/users");
-      console.log(response);
 
       expect(response.status).toBe(400);
       expect(response.body.error).toBe(errorMessage);
