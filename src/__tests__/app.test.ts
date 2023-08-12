@@ -1,7 +1,7 @@
 import request from "supertest";
 import app from "@/src/app";
 import * as UserController from "@/src/controllers/users.controller";
-import { apiDirectory } from "../shared.constant";
+import { apiDirectory } from "@/src/shared.constant";
 
 describe("/", () => {
   const expectedDirectory = apiDirectory;

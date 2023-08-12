@@ -1,7 +1,7 @@
-import User from "../../models/users.model";
-import { getUsers } from "../../controllers/users.controller";
+import User from "@/src/models/users.model";
+import { getUsers } from "@/src/controllers/users.controller";
 
-jest.mock("../../models/users.model.ts");
+jest.mock("@/src/models/users.model.ts");
 
 describe("Users Controller", () => {
   afterEach(() => {

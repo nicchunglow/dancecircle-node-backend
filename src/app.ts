@@ -3,8 +3,8 @@ import "dotenv/config";
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors, { CorsOptions } from "cors";
-import UserRouter from "./routes/users.route";
-import { apiDirectory } from "./shared.constant";
+import UserRouter from "@/src/routes/users.route";
+import { apiDirectory } from "@/src/shared.constant";
 
 const app = express();
 

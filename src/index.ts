@@ -1,7 +1,7 @@
 // index.ts
 import "dotenv";
-import sequelize from "./utils/db";
-import app from "./app";
+import sequelize from "@/src/utils/db";
+import app from "@/src/app";
 
 const PORT = process.env.PORT || 3000 || 3001;
 
