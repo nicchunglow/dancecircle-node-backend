@@ -1,5 +1,5 @@
-import express, { NextFunction, Request, Response } from "express"
-import * as UserController from "@/src/controllers/users.controller"
+import express, { NextFunction, Request, Response } from 'express'
+import * as UserController from '@/src/controllers/users.controller'
 const router = express.Router()
 
 const getUsers = async (_req: Request, res: Response, next: NextFunction) => {
@@ -10,6 +10,6 @@ const getUsers = async (_req: Request, res: Response, next: NextFunction) => {
     next(err)
   }
 }
-router.get("/", getUsers)
+router.get('/', getUsers)
 
 export default router

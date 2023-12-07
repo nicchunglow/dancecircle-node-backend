@@ -1,17 +1,17 @@
 // index.ts
-import "dotenv"
-import sequelize from "@/src/utils/db"
-import app from "@/src/app"
+import 'dotenv'
+import sequelize from '@/src/utils/db'
+import app from '@/src/app'
 
 const PORT = process.env.PORT || 3000 || 3001
 
 sequelize
   .sync()
   .then(() => {
-    console.log("Database synchronized")
+    console.log('Database synchronized')
   })
   .catch((error) => {
-    console.error("Error synchronizing database:", error)
+    console.error('Error synchronizing database:', error)
   })
 
 sequelize
@@ -22,5 +22,5 @@ sequelize
     })
   })
   .catch((error) => {
-    console.error("Unable to connect to the database: ", error)
+    console.error('Unable to connect to the database: ', error)
   })
