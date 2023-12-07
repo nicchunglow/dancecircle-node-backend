@@ -1,30 +1,34 @@
-import request from "supertest";
-import app from "@/src/app";
-import * as UserController from "@/src/controllers/users.controller";
-import { apiDirectory } from "@/src/shared.constant";
+import request from "supertest"
+import app from "@/src/app"
+import * as UserController from "@/src/controllers/users.controller"
+import { apiDirectory } from "@/src/shared.constant"
 
 describe("/", () => {
-  const expectedDirectory = apiDirectory;
+  const expectedDirectory = apiDirectory
   it("should contain the home directory", async () => {
-    const { body: response } = await request(app).get("/");
-    expect(response).toEqual(expectedDirectory);
-  });
+    const { body: response } = await request(app).get("/")
+    expect(response).toEqual(expectedDirectory)
+  })
   describe("Error Handling", () => {
     it("should handle 400 statusCode errors", async () => {
-      const errorMessage = "This is 400";
-      jest.spyOn(UserController, "getUsers").mockRejectedValue({ message: errorMessage, statusCode: 400 });
+      const errorMessage = "This is 400"
+      jest
+        .spyOn(UserController, "getUsers")
+        .mockRejectedValue({ message: errorMessage, statusCode: 400 })
 
-      const response = await request(app).get("/users");
+      const response = await request(app).get("/users")
 
-      expect(response.status).toBe(400);
-      expect(response.body.error).toBe(errorMessage);
-    });
+      expect(response.status).toBe(400)
+      expect(response.body.error).toBe(errorMessage)
+    })
     it("should handle 500 statusCode errors", async () => {
-      jest.spyOn(UserController, "getUsers").mockRejectedValue(new Error("Test error"));
+      jest
+        .spyOn(UserController, "getUsers")
+        .mockRejectedValue(new Error("Test error"))
 
-      const response = await request(app).get("/users");
+      const response = await request(app).get("/users")
 
-      expect(response.status).toBe(500);
-    });
-  });
-});
+      expect(response.status).toBe(500)
+    })
+  })
+})
