@@ -4,10 +4,13 @@ import * as UserController from '@/src/controllers/users.controller'
 import { apiDirectory } from '@/src/shared.constant'
 
 describe('/', () => {
-  const expectedDirectory = apiDirectory
   it('should contain the home directory', async () => {
     const { body: response } = await request(app).get('/')
-    expect(response).toEqual(expectedDirectory)
+    expect(response).toEqual(apiDirectory)
+  })
+  it('should contain the home directory', async () => {
+    const { body: response } = await request(app).get('/')
+    expect(response).toEqual(apiDirectory)
   })
   describe('Error Handling', () => {
     it('should handle 400 statusCode errors', async () => {

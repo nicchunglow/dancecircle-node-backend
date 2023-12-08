@@ -12,7 +12,7 @@ const appIndex = (_req: Request, res: Response) => {
   res.send(apiDirectory)
 }
 
-const frontendUrl: string = process.env.FRONTEND_URL ?? ''
+const frontendUrl: any = process.env.FRONTEND_URL
 const corsOptions: CorsOptions = {
   origin: [frontendUrl, 'http://localhost:3000'],
   allowedHeaders: 'content-type',
