@@ -16,7 +16,7 @@ describe('/', () => {
     it('should handle 400 statusCode errors', async () => {
       const errorMessage = 'This is 400'
       jest
-        .spyOn(UserController, 'getUsers')
+        .spyOn(UserController, 'getAllUsers')
         .mockRejectedValue({ message: errorMessage, statusCode: 400 })
 
       const response = await request(app).get('/users')
@@ -26,7 +26,7 @@ describe('/', () => {
     })
     it('should handle 500 statusCode errors', async () => {
       jest
-        .spyOn(UserController, 'getUsers')
+        .spyOn(UserController, 'getAllUsers')
         .mockRejectedValue(new Error('Test error'))
 
       const response = await request(app).get('/users')

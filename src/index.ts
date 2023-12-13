@@ -1,26 +1,17 @@
-// index.ts
-import 'dotenv'
-import sequelize from '@/src/utils/db'
-import app from '@/src/app'
+import app from "./app";
 
-const PORT = process.env.PORT || 3000 || 3001
+const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
-sequelize
-  .sync()
-  .then(() => {
-    console.log('Database synchronized')
-  })
-  .catch((error) => {
-    console.error('Error synchronizing database:', error)
-  })
+app.listen(port, function () {
+  console.log(`Express Server initiated listening on port ${port}`);
+});
 
-sequelize
-  .authenticate()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on PORT http://localhost:${PORT}`)
-    })
-  })
-  .catch((error) => {
-    console.error('Unable to connect to the database: ', error)
-  })
+process.on("SIGTERM", function () {
+  console.log(`SIGTERM signal received: closing HTTP server.`);
+  process.exit();
+});
+
+process.on("SIGINT", function () {
+  console.log(`SIGINT signal received: closing HTTP server.`);
+  process.exit();
+});
